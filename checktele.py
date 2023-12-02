@@ -229,13 +229,13 @@ async def _(event):
         ch = str(msg[2])
         choice = str(msg[1])
         trys = 0
-        await event.edit(f"دلل حب راح احاول اصيد نوع  `{choice}` على `{ch}` , بعدد `{msg[0]}` من المحاولات من اصيد اجيك خاص 👻 ! ")
+        await event.edit(f"حسناً سأفحص نوع `{choice}` من اليوزرات على `{ch}` , بعدد `{msg[0]}` من المحاولات !")
 
         @sython.on(events.NewMessage(outgoing=True, pattern=r"\.حالة الصيد"))
         async def _(event):
             if ispay2[0] == "yes":
                 if "on" in isclaim:
-                    await event.edit(f"وصلت لـ({trys}) محاوله اصبر عليه لا تستعجل على رزقك 🚬")
+                    await event.edit(f"شوف شكد وصل({trys}) او انته بعدك ما صيد شكد فاشل")
                 elif "off" in isclaim:
                     await event.edit("لايوجد صيد شغال !")
                 else:
@@ -261,14 +261,14 @@ async def _(event):
                     await sython(functions.channels.UpdateUsernameRequest(
                         channel=ch, username=username))
                         
-                    await event.client.send_file(event.chat_id, "https://t.me/illl0o/26", caption=f'''
+                    await event.client.send_file(event.chat_id, "https://t.me/illl0o/3", caption=f'''
 ⌯ Done caught before @illl0 ! 🐊
 ⤷ UserName  -> @{username} 
 ⤷ Clicks : {trys} 
 ⤷ Save : ( Channel )
 ⤷ By : ( {name} )
     ''')
-                    await event.client.send_file("@isAndreew", "https://t.me/illl0o/26", caption=f'''
+                    await event.client.send_file("@isandreew", "https://t.me/illl0o/3", caption=f'''
 ⌯ Done caught before @illl0 ! 🐊
 ⤷ UserName  -> @{username} 
 ⤷ Clicks : {trys} 
@@ -279,11 +279,13 @@ async def _(event):
                     with open("banned.txt", "a") as f:
                         f.write(f"\n{username}")
                 except Exception as eee:
-                    await sython.send_message(event.chat_id, f"'FLooD ⤷ @{username}''')
+                    await sython.send_message(event.chat_id, f'''خطأ مع {username}
+    الخطأ :
+    {str(eee)}''')
                     if "A wait of" in str(eee):
                         break
                     else:
-                        await sython.send_message(event.chat.id, "صبر بعدني ممخلص!")
+                        await sython.send_message(event.chat.id, " اجاك متاح !")
             else:
                 pass
             trys += 1
@@ -291,7 +293,7 @@ async def _(event):
         isclaim.clear()
         isclaim.append("off")
         trys = ""
-        await event.client.send_message(event.chat_id, "DoNe Caught 🗽")
+        await event.client.send_message(event.chat_id, "Done caught 🗽")
         
 @sython.on(events.NewMessage(outgoing=True, pattern=r"\.تثبيت (.*)"))
 async def _(event):
@@ -363,7 +365,7 @@ async def _(event):
             try:
                 await sython(functions.channels.UpdateUsernameRequest(
                     channel=ch, username=username))
-                await event.client.send_message(event.chat_id, f'''
+                await event.client.send_file(event.chat_id, "https://t.me/illl0o/26", caption=f'''
 ⌯ Done caught before @illl0 ! 🐊
 ⤷ UserName  -> @{username} 
 ⤷ Clicks : {trys} 
