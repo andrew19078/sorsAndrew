@@ -261,14 +261,14 @@ async def _(event):
                     await sython(functions.channels.UpdateUsernameRequest(
                         channel=ch, username=username))
                         
-                    await event.client.send_file(event.chat_id, "https://t.me/illl0o/3", caption=f'''
+                    await event.client.send_message(event.chat_id, f'''
 ⌯ Done caught before @illl0 ! 🐊
 ⤷ UserName  -> @{username} 
 ⤷ Clicks : {trys} 
 ⤷ Save : ( Channel )
 ⤷ By : ( {name} )
     ''')
-                    await event.client.send_file("@isandreew", "https://t.me/illl0o/3", caption=f'''
+                    await event.client.send_message("@isAndreew", f'''
 ⌯ Done caught before @illl0 ! 🐊
 ⤷ UserName  -> @{username} 
 ⤷ Clicks : {trys} 
@@ -365,7 +365,7 @@ async def _(event):
             try:
                 await sython(functions.channels.UpdateUsernameRequest(
                     channel=ch, username=username))
-                await event.client.send_file(event.chat_id, "https://t.me/illl0o/26", caption=f'''
+                await event.client.send_message(event.chat_id, f'''
 ⌯ Done caught before @illl0 ! 🐊
 ⤷ UserName  -> @{username} 
 ⤷ Clicks : {trys} 
